@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace ImportacaoLista.Entidades
 {
-    class Clientes
+    public class Clientes
     {
         public string CPF { get; set; }
         public string Nome { get; set; }
         public int Idade { get; set; }
-        public char Sexo { get; set; }
+        public char Genero { get; set; }
         public string Nacionalidade { get; set; }
 
     }

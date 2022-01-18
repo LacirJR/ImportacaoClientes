@@ -6,8 +6,8 @@ namespace ImportacaoLista
     {
         static void Main(string[] args)
         {
-            LeituraArquivo leitura = new();
-            leitura.Leitura();
+           Fluxo leitura = new();
+            leitura.ImportacaoClientes();
         }
     }
 }
