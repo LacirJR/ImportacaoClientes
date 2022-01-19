@@ -4,17 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace ImportacaoLista.Conexoes
 {
     class Sql
     {
 
-        public SqlConnection _conexao;
+        public readonly SqlConnection _conexao;
 
         public  Sql()
         {
-            this._conexao = new SqlConnection(@"Server=192.168.18.238;Database=aluno_01;User Id=aluno;Password=123456;");
+            string baseDados = File.ReadAllText(@"C:\Users\Nagib\Desktop\LACIR\Base de dados\BasedeDadosConexao.txt");
+           _conexao = new SqlConnection(baseDados);
 
         }
         

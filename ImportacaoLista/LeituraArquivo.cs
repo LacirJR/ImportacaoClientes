@@ -19,11 +19,11 @@ namespace ImportacaoLista
             foreach (string linhaCliente in linhasClientes)
             {
                 var cliente = new Entidades.Clientes();
-                cliente.CPF = linhaCliente.Substring(0, 11);
-                cliente.Nome = linhaCliente.Substring(11, 80);
-                cliente.Genero = Convert.ToChar(linhaCliente.Substring(91, 1));
-                cliente.Idade = int.Parse(linhaCliente.Substring(92, 3));
-                cliente.Nacionalidade = linhaCliente.Substring(95, 20);
+                cliente.CPF = linhaCliente.Substring(0, 11).Trim();
+                cliente.Nome = linhaCliente.Substring(11, 80).Trim();
+                cliente.Genero = Convert.ToChar(linhaCliente.Substring(91, 1).Trim());
+                cliente.Idade = int.Parse(linhaCliente.Substring(92, 3).Trim());
+                cliente.Nacionalidade = linhaCliente.Substring(95, 20).Trim();
                
 
                 listaClientes.Add(cliente);
