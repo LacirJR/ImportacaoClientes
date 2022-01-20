@@ -14,7 +14,18 @@ namespace ImportacaoLista
             clientes.Leitura();
             var sql = new Conexoes.Sql();
             foreach (var cliente in clientes.Leitura())
-                    sql.InserirBaseDados(cliente) ;
+            {
+                bool existencia = sql.VerificarExistencia(cliente.CPF);
+                if (existencia == false)
+                {
+                    sql.InserirBaseDados(cliente);
+                } else
+                {
+                    sql.AtualizarCliente(cliente);
+                }
+
+                break;
+            }
 
 
             
